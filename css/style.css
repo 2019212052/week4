@@ -1,0 +1,91 @@
+/*@-webkit-keyframes gedfr {
+	0%{
+		margin-left:0;
+	}
+	50%{
+		margin-left:500px;
+	}
+	100%{
+		margin-left:0;
+	}
+}
+
+@-webkit-keyframes gedf {
+	0%{
+		margin-top:0;
+	}
+	50%{
+		margin-top:500px;
+	}
+	100%{
+		margin-top:0;
+	}
+}
+
+.box{
+	width:100px;
+	height:100px;
+	background-color:red;
+	align-content:center;
+	animation-name:gedfr;
+	animation-duration:3s;
+	animation-direction:reverse;
+	animation-iteration-count:infinite;
+	transition-property:transform;
+	transition-duration:0.5s;
+}
+
+.dot{
+	width:1px;
+	height:1px;
+	animation-name:gedf;
+	animation-duration:3s;
+	animation-direction:reverse;
+	animation-iteration-count:infinite;
+	transition-property:transform;
+	transition-duration:0.5s;
+}
+
+.box:hover {
+	background-color:blue;
+	transform:rotate(180deg);
+
+}*/
+
+.dot:hover span{
+  display: none;
+}
+
+.dot:hover:after{
+  content:'you cant catch me !';
+  animation-play-state: paused;
+}
+
+.dot {
+  animation: xAxis 2.5s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
+}
+
+.dot::after {
+  content: 'bzzz i am a fly';
+  align-content: center;
+  display: block;
+  width: 126px;
+  height: 20px;
+  border-radius: 1px;
+  background-color: #fff;
+  animation: yAxis 2.5s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
+}
+
+@keyframes yAxis {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(-250px);
+  }
+}
+
+@keyframes xAxis {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(250px);
+  }
+}
